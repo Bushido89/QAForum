@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace QAForum.Models
+namespace DAL.Models
 {
     [MetadataType(typeof(MetaData))]
     public partial class Forum

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Entity;
 
-namespace QAForum.Models
+namespace DAL.Models
 {
     public class QAContext : DbContext
     {
@@ -11,6 +11,6 @@ namespace QAForum.Models
         }
         public DbSet<Student> Students { get; set; }
 
-        public System.Data.Entity.DbSet<QAForum.Models.Forum> Fora { get; set; }
+        public System.Data.Entity.DbSet<DAL.Models.Forum> Fora { get; set; }
     }
 }

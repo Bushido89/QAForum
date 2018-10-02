@@ -1,4 +1,4 @@
-﻿using QAForum.Models;
+﻿using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +31,8 @@ namespace QAForum.Controllers
         // GET: Forum/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            ViewBag.Message = "Forum Detail";
+            return View(forumRepository.GetForumById(id));
         }
 
         // GET: Forum/Create
