@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QAForum.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,8 +9,27 @@ namespace QAForum.Controllers
 {
     public class HomeController : Controller
     {
+        private IForumRepository forumRepository = null;
+
+        public HomeController() : this(new SqlForumRepository())
+        {
+
+        }
+
+        public HomeController(IForumRepository aForumRepository)
+        {
+            forumRepository = aForumRepository;
+        }
+
+        public ActionResult OldIndex()
+        {
+            QAContext context = new QAContext();
+            return View(context.Students.ToList());
+        }
+
         public ActionResult Index()
         {
+            ViewBag.Message = "Welcome to the QA Forums Web Site!";
             return View();
         }
 
