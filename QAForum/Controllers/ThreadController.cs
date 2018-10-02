@@ -1,5 +1,4 @@
-﻿using DAL.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,29 +6,27 @@ using System.Web.Mvc;
 
 namespace QAForum.Controllers
 {
-    public class ForumController : ForumRepositoryBaseController
+    public class ThreadController : ForumRepositoryBaseController
     {
-        // GET: Forum
+        // GET: Thread
         public ActionResult Index()
         {
-            ViewBag.Message = "QA Forums List";
-            return View(forumRepository.GetAllForums());
+            return View();
         }
 
-        // GET: Forum/Details/5
+        // GET: Thread/Details/5
         public ActionResult Details(int id)
         {
-            ViewBag.Message = "Forum Detail";
-            return View(forumRepository.GetForumById(id));
+            return View();
         }
 
-        // GET: Forum/Create
+        // GET: Thread/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Forum/Create
+        // POST: Thread/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
         {
@@ -45,13 +42,13 @@ namespace QAForum.Controllers
             }
         }
 
-        // GET: Forum/Edit/5
+        // GET: Thread/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Forum/Edit/5
+        // POST: Thread/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -67,13 +64,13 @@ namespace QAForum.Controllers
             }
         }
 
-        // GET: Forum/Delete/5
+        // GET: Thread/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Forum/Delete/5
+        // POST: Thread/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

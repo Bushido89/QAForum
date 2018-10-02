@@ -20,7 +20,7 @@
 
     @foreach(var item in Model.Threads)
     {
-        <div>@Html.ActionLink(item.ThreadTitle, "GetThread", new { id = Model.ForumID })</div>
+        <div>@Html.ActionLink(item.ThreadTitle, "GetThread", new { id = item.ThreadID })</div>
     }
 </div>
 <p>
