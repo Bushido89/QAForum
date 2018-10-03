@@ -6,9 +6,8 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@Scripts.Render("~/bundles/qa")
+@Styles.Render("~/Content/qa")
 <table class="table">
     <tr>
         <th>
@@ -20,20 +19,23 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostDateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PostBody)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PostID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PostID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PostID })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostBody)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PostID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PostID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PostID })
+            </td>
+        </tr>
+    }
 </table>
+<a id="addComment" onclick="window.controlHelpers.commentBox.Get(this);">
+    Add a comment...
+</a>

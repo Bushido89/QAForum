@@ -1,0 +1,12 @@
+﻿.submitButton {
+    display: block;
+    margin-top: 3px;
+
+}
+
+.commentTextArea {
+    height: 150px;
+    max-width: 100%;
+    width: 100%;
+    resize: none;
+}

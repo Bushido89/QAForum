@@ -36,6 +36,12 @@ namespace QAForum.Controllers
             }
         }
 
+        // GET: Return partial view for add comment box
+        public ActionResult CommentBox()
+        {
+            return View();
+        }
+
         // POST: Post/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, Post post)
@@ -65,5 +71,6 @@ namespace QAForum.Controllers
                 return View();
             }
         }
+        
     }
 }
