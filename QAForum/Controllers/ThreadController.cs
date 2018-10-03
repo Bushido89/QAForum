@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DAL.Models;
 
 namespace QAForum.Controllers
 {
@@ -11,51 +12,39 @@ namespace QAForum.Controllers
         // GET: Thread
         public ActionResult Index()
         {
-            return View();
+            var threads = forumRepository.GetAllThreads();
+            return View(threads);
         }
 
         // GET: Thread/Details/5
         public ActionResult Details(int id)
         {
-            return View();
-        }
-
-        // GET: Thread/Create
-        public ActionResult Create()
-        {
-            return View();
+            var thread = forumRepository.GetThreadByID(id);
+            return View(thread);
         }
 
         // POST: Thread/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Thread thread)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                forumRepository.AddThread(thread);
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
-        }
-
-        // GET: Thread/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
         }
 
         // POST: Thread/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Thread thread)
         {
             try
             {
-                // TODO: Add update logic here
-
+                forumRepository.UpdateThread(id, thread);
                 return RedirectToAction("Index");
             }
             catch
@@ -64,20 +53,13 @@ namespace QAForum.Controllers
             }
         }
 
-        // GET: Thread/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: Thread/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Thread thread)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                forumRepository.DeleteThread(id, thread);
                 return RedirectToAction("Index");
             }
             catch

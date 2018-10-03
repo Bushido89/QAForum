@@ -5,7 +5,7 @@ using System.Web;
 
 namespace DAL.Models
 {
-    public class SqlForumRepository : IForumRepository
+    public class SqlForumRepository : IForumRepository, IDisposable
     {
         private ForumEntities forumDb = new ForumEntities();
 
@@ -27,22 +27,27 @@ namespace DAL.Models
             forumDb.SaveChanges();
         }
 
-        public void DeleteForum(Forum forum)
+        public void DeleteForum(int id, Forum forum)
         {
-            forumDb.Forums.Remove(forum);
+            forumDb.Forums.Remove(forumDb.Forums.Single(f => f.ForumID == id));
             forumDb.SaveChanges();
         }
 
-        public void DeletePost(Post post)
+        public void DeletePost(int id, Post post)
         {
-            forumDb.Posts.Remove(post);
+            forumDb.Posts.Remove(forumDb.Posts.Single(p => p.PostID == id));
             forumDb.SaveChanges();
         }
 
-        public void DeleteThread(Thread thread)
+        public void DeleteThread(int id, Thread thread)
         {
-            forumDb.Threads.Remove(thread);
+            forumDb.Threads.Remove(forumDb.Threads.Single(t => t.ThreadID == id));
             forumDb.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            //TODO: Implementation
         }
 
         public IEnumerable<Forum> GetAllForums()
@@ -85,24 +90,27 @@ namespace DAL.Models
             return GetForumById(forumID).Threads.ToList();
         }
 
-        public void UpdateForum(Forum forum)
+        public void UpdateForum(int id, Forum forum)
         {
-            var forumBuffer = forumDb.Forums.Single(f => f.ForumID == forum.ForumID);
-            forumBuffer = forum;
+            var forumBuffer = forumDb.Forums.Single(f => f.ForumID == id);
+            forum.ForumID = id;
+            forumDb.Entry(forumBuffer).CurrentValues.SetValues(forum);
             forumDb.SaveChanges();
         }
 
-        public void UpdatePost(Post post)
+        public void UpdatePost(int id, Post post)
         {
-            var postBuffer = forumDb.Posts.Single(p => p.PostID == post.PostID);
-            postBuffer = post;
+            var postBuffer = forumDb.Posts.Single(p => p.PostID == id);
+            post.PostID = id;
+            forumDb.Entry(postBuffer).CurrentValues.SetValues(post);
             forumDb.SaveChanges();
         }
 
-        public void UpdateThread(Thread thread)
+        public void UpdateThread(int id, Thread thread)
         {
-            var threadBuffer = forumDb.Threads.Single(t => t.ThreadID == thread.ThreadID);
-            threadBuffer = thread;
+            var threadBuffer = forumDb.Threads.Single(t => t.ThreadID == id);
+            thread.ThreadID = id;
+            forumDb.Entry(threadBuffer).CurrentValues.SetValues(thread);
             forumDb.SaveChanges();
         }
     }

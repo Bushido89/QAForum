@@ -23,69 +23,48 @@ namespace QAForum.Controllers
             return View(forumRepository.GetForumById(id));
         }
 
-        // GET: Forum/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Forum/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Forum forum)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                forumRepository.AddForum(forum);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View(ex);
             }
-        }
-
-        // GET: Forum/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
         }
 
         // POST: Forum/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Forum forum)
         {
             try
             {
-                // TODO: Add update logic here
-
+                forumRepository.UpdateForum(id, forum);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View(ex);
             }
-        }
-
-        // GET: Forum/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
         }
 
         // POST: Forum/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Forum forum)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                forumRepository.DeleteForum(id, forum);
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return View(ex);
             }
         }
     }

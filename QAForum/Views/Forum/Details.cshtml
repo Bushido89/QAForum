@@ -5,7 +5,7 @@
 }
 
 <h2>@ViewBag.Message</h2>
-
+    @Html.ActionLink("Create New", "Create")
 <div>
     <h4>Forum</h4>
     <hr />
@@ -17,11 +17,6 @@
             @Html.DisplayFor(model => model.ForumTitle)
         </dd>
     </dl>
-
-    @foreach(var item in Model.Threads)
-    {
-        <div>@Html.ActionLink(item.ThreadTitle, "GetThread", new { id = item.ThreadID })</div>
-    }
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ForumID }) |

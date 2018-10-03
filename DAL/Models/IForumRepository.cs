@@ -29,16 +29,16 @@ namespace DAL.Models
 
         void AddPost(Post post);
 
-        void UpdateForum(Forum forum);
+        void UpdateForum(int id, Forum forum);
 
-        void UpdateThread(Thread thread);
+        void UpdateThread(int id, Thread thread);
 
-        void UpdatePost(Post post);
+        void UpdatePost(int id, Post post);
 
-        void DeleteForum(Forum forum);
+        void DeleteForum(int id, Forum forum);
 
-        void DeleteThread(Thread thread);
+        void DeleteThread(int id, Thread thread);
 
-        void DeletePost(Post post);
+        void DeletePost(int id, Post post);
     }
 }
