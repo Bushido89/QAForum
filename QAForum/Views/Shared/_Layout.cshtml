@@ -22,7 +22,11 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Forums", "Index", "Forum")</li>
+                    <li>
+                        <a href="@Url.Action("Index", "Forum")">
+                            <img src="@Url.Content("~/Content/Images/forum.jpg")" />
+                        </a>
+                    </li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
@@ -32,7 +36,11 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - QA Forums</p>
+            <a href="http://www.qa.com"
+                target="_blank">QA Training</a> |
+            <a href="http://www.qa.com/about-qa/blogs/"
+                target="_blank">QA Blogs</a>
+            <p>&copy; @DateTime.Now.Year - QA</p>
         </footer>
     </div>
 
