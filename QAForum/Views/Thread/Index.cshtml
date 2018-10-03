@@ -26,7 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Forum.ForumTitle)
+            @Html.ActionLink(Html.DisplayFor(modelItem => item.Forum.ForumTitle), "Index", "Post", new { id = item.ThreadID }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ThreadTitle)

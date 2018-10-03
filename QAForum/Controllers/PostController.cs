@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,7 +7,7 @@ using System.Web.Mvc;
 
 namespace QAForum.Controllers
 {
-    public class PostController : Controller
+    public class PostController : ForumRepositoryBaseController
     {
         // GET: Post
         public ActionResult Index()
@@ -20,42 +21,28 @@ namespace QAForum.Controllers
             return View();
         }
 
-        // GET: Post/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Post/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Post post)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                forumRepository.AddPost(post);
                 return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
-        }
-
-        // GET: Post/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
         }
 
         // POST: Post/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Post post)
         {
             try
             {
-                // TODO: Add update logic here
-
+                forumRepository.UpdatePost(id, post);
                 return RedirectToAction("Index");
             }
             catch
@@ -64,20 +51,13 @@ namespace QAForum.Controllers
             }
         }
 
-        // GET: Post/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
         // POST: Post/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id, Post post)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                forumRepository.DeletePost(id, post);
                 return RedirectToAction("Index");
             }
             catch
