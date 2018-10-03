@@ -10,15 +10,15 @@ namespace QAForum.Controllers
     public class PostController : ForumRepositoryBaseController
     {
         // GET: Post
-        public ActionResult Index()
+        public ActionResult Index(int threadId)
         {
-            return View();
+            return View(forumRepository.GetPostsByThread(threadId));
         }
 
         // GET: Post/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(forumRepository.GetPostByID(id));
         }
 
         // POST: Post/Create

@@ -10,9 +10,9 @@ namespace QAForum.Controllers
     public class ThreadController : ForumRepositoryBaseController
     {
         // GET: Thread
-        public ActionResult Index()
+        public ActionResult Index(int forumId)
         {
-            var threads = forumRepository.GetAllThreads();
+            var threads = forumRepository.GetThreadsByForum(forumId);
             return View(threads);
         }
 

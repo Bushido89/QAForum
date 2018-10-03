@@ -10,6 +10,7 @@ namespace QAForum.Controllers
     public class ForumController : ForumRepositoryBaseController
     {
         // GET: Forum
+        [OutputCache(Duration = 10)]
         public ActionResult Index()
         {
             ViewBag.Message = "QA Forums List";

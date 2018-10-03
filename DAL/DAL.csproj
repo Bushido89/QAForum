@@ -53,6 +53,7 @@
     <Compile Include="Models\IForumRepository.cs" />
     <Compile Include="Models\MissingDllHack.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\Post.MetaData.cs" />
     <Compile Include="Models\QAContext.cs" />
     <Compile Include="Models\SqlForumRepository.cs" />
     <Compile Include="Models\Student.cs" />

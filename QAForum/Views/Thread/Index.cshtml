@@ -12,13 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Forum.ForumTitle)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.ThreadTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerID)
         </th>
         <th></th>
     </tr>
@@ -26,13 +20,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.ActionLink(Html.DisplayFor(modelItem => item.Forum.ForumTitle), "Index", "Post", new { id = item.ThreadID }, null)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ThreadTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OwnerID)
+            @Html.ActionLink(item.ThreadTitle, "Index", "Post", new { threadId = item.ThreadID }, null)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ThreadID }) |
