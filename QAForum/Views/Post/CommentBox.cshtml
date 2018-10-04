@@ -1,9 +1,14 @@
-﻿@{
+﻿@model DAL.Models.Post
+@{
     Layout = "";
 }
+@Html.Partial("ModelBind")
 <div id="CommentBoxContainer">
-    <form id="FormCommentBox" method="post">
-        <textarea id="TxtCommentBox" class="commentTextArea"/>
-        <input type="submit" value="Submit" class="submitButton"/>
-    </form>
+    @using (Html.BeginForm("Create", "Post"))
+            {
+                <textarea id="TxtCommentBox" class="commentTextArea" />
+                Html.EditorFor(model => Model.PostBody, new { htmlAttributes = new { @class = "form-control" } });
+                <button type = "submit" class="submitButton">Post</button>
+    }
+
 </div>

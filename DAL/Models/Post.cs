@@ -5,6 +5,7 @@ namespace DAL.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Script.Serialization;
 
     public partial class Post
     {
@@ -24,6 +25,7 @@ namespace DAL.Models
         [Required]
         public string PostBody { get; set; }
 
+        [ScriptIgnore(ApplyToOverrides = true)]
         public virtual Thread Thread { get; set; }
     }
 }

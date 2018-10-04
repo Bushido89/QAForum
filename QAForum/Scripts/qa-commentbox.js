@@ -5,11 +5,14 @@
     function CommentBox(sender) {
 
         this.Get = function (sender) {
-            $.get('../Post/CommentBox',
-                function (data) {
+            $.ajax({
+                type: 'POST',
+                url: '../Post/CommentBox',
+                data: window.model[0],
+                success: function (data) {
                     $(sender).replaceWith(data);
                 }
-            );
+            });
         };
 
         (function init() {

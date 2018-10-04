@@ -163,6 +163,38 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\Avatars\avatar1.jpg" />
+    <Content Include="Content\Images\Avatars\avatar10.jpg" />
+    <Content Include="Content\Images\Avatars\avatar11.jpg" />
+    <Content Include="Content\Images\Avatars\avatar12.jpg" />
+    <Content Include="Content\Images\Avatars\avatar13.gif" />
+    <Content Include="Content\Images\Avatars\avatar14.jpg" />
+    <Content Include="Content\Images\Avatars\avatar15.jpg" />
+    <Content Include="Content\Images\Avatars\avatar16.jpg" />
+    <Content Include="Content\Images\Avatars\avatar17.jpg" />
+    <Content Include="Content\Images\Avatars\avatar18.jpg" />
+    <Content Include="Content\Images\Avatars\avatar19.jpg" />
+    <Content Include="Content\Images\Avatars\avatar2.jpg" />
+    <Content Include="Content\Images\Avatars\avatar20.jpg" />
+    <Content Include="Content\Images\Avatars\avatar21.jpg" />
+    <Content Include="Content\Images\Avatars\avatar22.gif" />
+    <Content Include="Content\Images\Avatars\avatar23.gif" />
+    <Content Include="Content\Images\Avatars\avatar24.gif" />
+    <Content Include="Content\Images\Avatars\avatar25.jpg" />
+    <Content Include="Content\Images\Avatars\avatar26.gif" />
+    <Content Include="Content\Images\Avatars\avatar27.jpg" />
+    <Content Include="Content\Images\Avatars\avatar28.jpg" />
+    <Content Include="Content\Images\Avatars\avatar29.gif" />
+    <Content Include="Content\Images\Avatars\avatar3.jpg" />
+    <Content Include="Content\Images\Avatars\avatar30.gif" />
+    <Content Include="Content\Images\Avatars\avatar31.jpg" />
+    <Content Include="Content\Images\Avatars\avatar32.jpg" />
+    <Content Include="Content\Images\Avatars\avatar4.jpg" />
+    <Content Include="Content\Images\Avatars\avatar5.jpg" />
+    <Content Include="Content\Images\Avatars\avatar6.jpg" />
+    <Content Include="Content\Images\Avatars\avatar7.jpg" />
+    <Content Include="Content\Images\Avatars\avatar8.gif" />
+    <Content Include="Content\Images\Avatars\avatar9.gif" />
     <Content Include="Content\Images\forum.jpg" />
     <Content Include="Content\qa-commentbox.css" />
     <Content Include="favicon.ico" />
@@ -218,6 +250,7 @@
     <Content Include="Views\Post\Delete.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Post\CommentBox.cshtml" />
+    <Content Include="Views\Shared\ModelBind.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,8 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>@Model.First().Thread.ThreadTitle</h2>
+@Html.Partial("ModelBind")
 @Scripts.Render("~/bundles/qa")
 @Styles.Render("~/Content/qa")
 <table class="table">
@@ -35,6 +35,8 @@
             </td>
         </tr>
     }
+
+    @Html.Partial("CommentBox")
 </table>
 <a id="addComment" onclick="window.controlHelpers.commentBox.Get(this);">
     Add a comment...

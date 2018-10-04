@@ -12,7 +12,7 @@ namespace DAL.Models
         {
             Threads = new HashSet<Thread>();
         }
-
+        
         public int ForumID { get; set; }
 
         [Required]

@@ -36,10 +36,16 @@ namespace QAForum.Controllers
             }
         }
 
-        // GET: Return partial view for add comment box
-        public ActionResult CommentBox()
+        // POST: Return partial view for add comment box
+        [HttpPost]
+        public ActionResult CommentBox(Post post)
         {
-            return View();
+            var newPost = new Post()
+            {
+                ThreadID = post.ThreadID,
+                Thread = post.Thread
+            };
+            return View(newPost);
         }
 
         // POST: Post/Edit/5
